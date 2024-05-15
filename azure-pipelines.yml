@@ -7,13 +7,12 @@ container:
     AQUA_KEY: $(AQUA_KEY)
     AQUA_SECRET: $(AQUA_SECRET)
     TRIVY_RUN_AS_PLUGIN: aqua
-    AQUA_ASSURANCE_EXPORT: /tmp/scanresults.json
+    #AQUA_ASSURANCE_EXPORT: /tmp/scanresults.json
     # For http/https proxy configuration add env vars: HTTP_PROXY/HTTPS_PROXY, CA-CRET (path to CA certificate)
 
 steps:
-- script: apt update && apt install -y jq
 - script: |
     trivy fs --scanners misconfig,vuln,secret --sast .
     # To customize which severities to scan for, add the following flag: --severity UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL
     # To enable SAST scanning, add: --sast
-- script: cat /tmp/scanresults.json | jq
+#- script: cat /tmp/scanresults.json

@@ -7,6 +7,7 @@ container:
     AQUA_KEY: $(AQUA_KEY)
     AQUA_SECRET: $(AQUA_SECRET)
     TRIVY_RUN_AS_PLUGIN: aqua
+    vds.password: asdfASDF1234!@#$
     #AQUA_ASSURANCE_EXPORT: /tmp/scanresults.json
     # For http/https proxy configuration add env vars: HTTP_PROXY/HTTPS_PROXY, CA-CRET (path to CA certificate)
 
